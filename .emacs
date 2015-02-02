@@ -56,7 +56,10 @@
 ;; Source: https://github.com/magnars/multiple-cursors.el#readme
 ;; -------------------------------------------------
 (require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; Recommended is C-S-c C-S-c, but C-S (Ctrl-Shift)
+;; is not picked up by the ssh terminal I'm using
+;; resulting in only a C-c (Control-c). /HB 2015-02-01
+(global-set-key (kbd "C-c C-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
