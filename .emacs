@@ -59,7 +59,8 @@
 ;; Recommended is C-S-c C-S-c, but C-S (Ctrl-Shift)
 ;; is not picked up by the ssh terminal I'm using
 ;; resulting in only a C-c (Control-c). /HB 2015-02-01
-(global-set-key (kbd "C-c C-c") 'mc/edit-lines)
+;; Also C-c C-c is used by ESS.
+(global-set-key (kbd "C-c C-m") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
