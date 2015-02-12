@@ -113,6 +113,25 @@
 
 
 ;; ------------------------------------------------------
+;; Show matching brackets
+;; http://stackoverflow.com/questions/13575554/display-line-of-matching-bracket-in-the-minibuffer
+;; ------------------------------------------------------
+;; "I assume you have turned on show-paren-mode so matching
+;;  parens are highlighted:"
+;; (show-paren-mode t)
+
+;; "Then this will show the matching line if the paren is 
+;;  off the screen:"
+(defadvice show-paren-function (after my-echo-paren-matching-line activate)
+  "If a matching paren is off-screen, echo the matching line."
+  (when (char-equal (char-syntax (char-before (point))) ?\))
+    (let ((matching-text (blink-matching-open)))
+      (when matching-text
+        (message matching-text)))))
+
+
+
+;; ------------------------------------------------------
 ;; Source: http://endlessparentheses.com/super-smart-capitalization.html
 ;; ------------------------------------------------------
 (global-set-key "\M-c" 'endless/capitalize)
