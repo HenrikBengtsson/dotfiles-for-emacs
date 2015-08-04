@@ -10,7 +10,7 @@
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file)
 
-(add-to-list 'load-path "~/.emacs.d/elisp/")
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 
 ;; ------------------------------------------------------
@@ -31,7 +31,7 @@
   (setq package-archives '(
     ("gnu" . "http://elpa.gnu.org/packages/")
     ("melpa" . "http://melpa.org/packages/")
-    ("marmalade" . "https://marmalade-repo.org/packages/")
+    ("marmalade" . "http://marmalade-repo.org/packages/")
     ))
   (package-initialize)
   )
@@ -113,8 +113,7 @@
 ;; ------------------------------------------------------
 ;; Source: http://editorconfig.org/
 ;; ------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/elisp")
-(load "editorconfig")
+;; (load "editorconfig")
 
 
 ;; ------------------------------------------------------
