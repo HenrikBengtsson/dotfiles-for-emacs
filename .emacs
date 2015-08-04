@@ -1,41 +1,33 @@
 (message "evaluating ~/.emacs...")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
- '(require-final-newline nil))
-(custom-set-faces
- ;; custom-set-faces was added by custom
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq custom-file "~/.emacs-custom.el")
+(load custom-file)
 
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 
 
-
 ;; ------------------------------------------------------
 ;; ELPA (Emacs Lisp Package Archive)
+;; MELPA (Emacs Lisp Package Archive)
+;;
 ;; "Our goal is to make it simple to install, use,
 ;; and upgrade Emacs Lisp packages."
 ;;
 ;; Usage: Menu > Options > Manage Emacs Packages
 ;; 
-;; Source: http://www.emacswiki.org/emacs/ELPA
+;; Source:
+;;   http://www.emacswiki.org/emacs/ELPA
+;;   http://melpa.org/#/getting-started
 ;; ------------------------------------------------------
 (when (>= emacs-major-version 24)
   (require 'package)
-  (package-initialize)
   (setq package-archives '(
     ("gnu" . "http://elpa.gnu.org/packages/")
+    ("melpa" . "http://melpa.org/packages/")
     ("marmalade" . "https://marmalade-repo.org/packages/")
-    ("melpa" . "http://melpa.milkbox.net/packages/")))
+    ))
+  (package-initialize)
   )
-
 
 ;; -------------------------------------------------
 ;; Modifies Ctrl-a
@@ -111,6 +103,12 @@
 ;; (setq mode-require-final-newline nil)
 
 
+;; ------------------------------------------------------
+;; Source: http://editorconfig.org/
+;; ------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/elisp")
+(load "editorconfig")
+
 
 ;; ------------------------------------------------------
 ;; Show matching brackets
@@ -178,6 +176,14 @@ Also converts full stops to commas."
   (if (use-region-p)
       (call-interactively 'upcase-region)
     (call-interactively 'subword-upcase)))
+
+;; -------------------------------------------------
+;; WakaTime
+;; Time manager/recorded
+;; Dashboard: https://wakatime.com/dashboard
+;; Source: https://wakatime.com/help/plugins/emacs
+;; -------------------------------------------------
+(global-wakatime-mode)
 
 (message "Evaluating ~/.emacs...done")
 (put 'dired-find-alternate-file 'disabled nil)
