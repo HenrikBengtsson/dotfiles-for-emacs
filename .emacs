@@ -1,5 +1,12 @@
 (message "evaluating ~/.emacs...")
 
+;; ------------------------------------------------------
+;; Use a separate file for Emacs custom settings
+;; This has two advantages:
+;; * It keeps this initialization file clean.
+;; * It prevents secret settings from being added to
+;;   this file by mistake, e.g. private API keys.
+;; ------------------------------------------------------
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file)
 
