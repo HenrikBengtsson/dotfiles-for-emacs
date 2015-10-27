@@ -189,7 +189,7 @@ Also converts full stops to commas."
 ;; Dashboard: https://wakatime.com/dashboard
 ;; Source: https://wakatime.com/help/plugins/emacs
 ;; -------------------------------------------------
-(global-wakatime-mode)
+;; (global-wakatime-mode)
 
 (message "Evaluating ~/.emacs...done")
 (put 'dired-find-alternate-file 'disabled nil)
