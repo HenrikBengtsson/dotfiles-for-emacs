@@ -186,13 +186,17 @@ Also converts full stops to commas."
       (call-interactively 'upcase-region)
     (call-interactively 'subword-upcase)))
 
+
 ;; -------------------------------------------------
-;; WakaTime
-;; Time manager/recorded
-;; Dashboard: https://wakatime.com/dashboard
-;; Source: https://wakatime.com/help/plugins/emacs
+;; Chrome: Edit with Emacs
 ;; -------------------------------------------------
-;; (global-wakatime-mode)
+(require `edit-server)
+(edit-server-start)
+
+;; -------------------------------------------------
+;; Git: magit
+;; -------------------------------------------------
+(add-hook 'after-save-hook 'magit-after-save-refresh-status)
 
 (message "Evaluating ~/.emacs...done")
 (put 'dired-find-alternate-file 'disabled nil)
