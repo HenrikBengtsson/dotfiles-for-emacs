@@ -72,6 +72,9 @@
 (global-set-key [XF86Forward] 'next-buffer)
 
 
+;; Display current column position
+(setq column-number-mode t)
+
 
 ;; ------------------------------------------------------
 ;; WindMove - navigate between windows (multiple buffers
