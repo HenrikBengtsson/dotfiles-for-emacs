@@ -21,6 +21,9 @@
 ;; and upgrade Emacs Lisp packages."
 ;;
 ;; Usage: Menu > Options > Manage Emacs Packages
+;;        Keys: M-x menu-bar-open
+;;
+;; To upgrade packages: Click U -> x
 ;; 
 ;; Source:
 ;;   http://www.emacswiki.org/emacs/ELPA
@@ -29,9 +32,9 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (setq package-archives '(
-    ("gnu" . "http://elpa.gnu.org/packages/")
+;;    ("gnu" . "http://elpa.gnu.org/packages/")
     ("melpa" . "http://melpa.org/packages/")
-    ("marmalade" . "http://marmalade-repo.org/packages/")
+;;    ("marmalade" . "http://marmalade-repo.org/packages/")
     ))
   (package-initialize)
   )
@@ -196,7 +199,7 @@ Also converts full stops to commas."
 ;; -------------------------------------------------
 ;; Git: magit
 ;; -------------------------------------------------
-(add-hook 'after-save-hook 'magit-after-save-refresh-status)
+;; (add-hook 'after-save-hook 'magit-after-save-refresh-status)
 
 (message "Evaluating ~/.emacs...done")
 (put 'dired-find-alternate-file 'disabled nil)
