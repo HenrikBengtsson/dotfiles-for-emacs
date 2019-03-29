@@ -190,8 +190,8 @@ Also converts full stops to commas."
 ;; -------------------------------------------------
 ;; Chrome: Edit with Emacs
 ;; -------------------------------------------------
-(require `edit-server)
-(edit-server-start)
+;; (require `edit-server)
+;; (edit-server-start)
 
 ;; -------------------------------------------------
 ;; Git: magit
